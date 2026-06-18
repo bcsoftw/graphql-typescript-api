@@ -14,6 +14,7 @@ import { makeExecutableSchema } from '@graphql-tools/schema';
 import { applyMiddleware } from 'graphql-middleware';
 import permissions from './guards/permissions';
 
+
 dotenv.config();
 
 async function startServer() {
