@@ -4,14 +4,14 @@
     "framework": "node",
     "builds": [
         {
-            "src": "dist/index.js",
+            "src": "src/index.ts",
             "use": "@vercel/node"
         }
     ],
     "rewrites": [
         {
             "source": "/(.*)",
-            "destination": "dist/index.js"
+            "destination": "/index.js"
         }
     ]
 }
