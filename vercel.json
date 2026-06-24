@@ -2,12 +2,12 @@
     "version": 2,
     "buildCommand": "npm run build",
     "installCommand": "npm ci",
-    "outputDirectory": "./dist",
+    "outputDirectory": "dist",
     "framework": "node",
     "rewrites": [
         {
             "source": "/(.*)",
-            "destination": "./dist/index.js"
+            "destination": "/index.js"
         }
     ]
 }
