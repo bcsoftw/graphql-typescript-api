@@ -3,5 +3,11 @@
     "buildCommand": "npm run build",
     "installCommand": "npm ci",
     "outputDirectory": "dist",
-    "framework": "node"
+    "framework": "node",
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/index.js"
+        }
+    ]
 }
