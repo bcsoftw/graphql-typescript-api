@@ -74,7 +74,7 @@ export const resolvers = {
     login: async (_: any, { email, password }: { email: string; password: string }) => {
 
       const userService = new UserService();
-      const user = await userService.getUserByEmail(email );
+      const user = await userService.getUserByEmail(email);
   
       if (!user) {
         throw new Error("Usuario no encontrado");
@@ -85,7 +85,7 @@ export const resolvers = {
       if (!isValid) {
         throw new Error("Contraseña incorrecta");
       }
-      const token = jwt.sign({ userId: user.id, role:user.role, user:user }, process.env.JWT_SECRET!, {
+      const token = jwt.sign({ userId: user.id, role: user.role }, process.env.JWT_SECRET!, {
         expiresIn: '7d'
       });
 
