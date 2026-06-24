@@ -1,21 +1,8 @@
 {
     "version": 2,
-    "builds": [
-        {
-            "src": "src/index.ts",
-            "use": "@vercel/node"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/index.js",
-            "headers": {
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Credentials": "true",
-                "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization",
-                "Access-Control-Allow-Methods": "GET, POST, OPTIONS"
-            }
-        }
-    ]
+    "buildCommand": "npm run build",
+    "installCommand": "npm ci",
+    "outputDirectory": "dist",
+    "startCommand": "npm run start",
+    "framework": "nodejs"
 }
