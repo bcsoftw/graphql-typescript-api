@@ -14,7 +14,7 @@ import { makeExecutableSchema } from '@graphql-tools/schema';
 import { applyMiddleware } from 'graphql-middleware';
 import permissions from './guards/permissions';
 
-
+const app = express();
 dotenv.config();
 
 async function startServer() {
@@ -27,7 +27,7 @@ async function startServer() {
     await userService.createIndexes();
 
     // Create Express app
-    const app = express();
+   
     
     // Create HTTP server
     const httpServer = http.createServer(app);
@@ -138,3 +138,5 @@ async function startServer() {
 
 // Start the server
 startServer();
+
+export default app;

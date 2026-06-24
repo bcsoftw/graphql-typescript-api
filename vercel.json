@@ -11,7 +11,7 @@
         },
         {
             "source": "/graphql",
-            "destination": "/index.js"
+            "destination": "/index.ts"
         }
     ]
 }
