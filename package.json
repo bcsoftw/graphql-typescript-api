@@ -2,7 +2,7 @@
   "name": "GraphQL with MongoDB Example",
   "version": "1.0.0",
   "description": "GraphQL API with Node.js and TypeScript",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",

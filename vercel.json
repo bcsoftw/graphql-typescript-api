@@ -1,17 +1,13 @@
 {
     "version": 2,
+    "buildCommand": "npm run build",
+    "installCommand": "npm ci",
     "outputDirectory": "./dist",
     "framework": "node",
-    "builds": [
-        {
-            "src": "/index.ts",
-            "use": "@vercel/node"
-        }
-    ],
     "rewrites": [
         {
             "source": "/(.*)",
-            "destination": "/index.js"
+            "destination": "/dist/index.js"
         }
     ]
 }
