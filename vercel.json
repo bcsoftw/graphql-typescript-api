@@ -3,6 +3,5 @@
     "buildCommand": "npm run build",
     "installCommand": "npm ci",
     "outputDirectory": "dist",
-    "startCommand": "npm run start",
     "framework": "nodejs"
 }
