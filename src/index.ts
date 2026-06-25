@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import { ApolloServer } from '@apollo/server';
 import { expressMiddleware } from '@apollo/server/express4';
+import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer';
 import express from 'express';
 import http from 'http';
 import jwt from 'jsonwebtoken';
@@ -43,14 +44,17 @@ async function startServer() {
     const server = new ApolloServer({
       schema: schemaWithPermissions,
       plugins: [
-        {
-          async serverWillStart() {
-            return {
-              async drainServer() {},
-            };
-          },
-        },
+        ApolloServerPluginDrainHttpServer({ httpServer })
       ],
+      // plugins: [
+      //   {
+      //     async serverWillStart() {
+      //       return {
+      //         async drainServer() {},
+      //       };
+      //     },
+      //   },
+      // ],
     });
 
     // Start Apollo Server
