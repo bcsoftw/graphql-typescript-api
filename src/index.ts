@@ -45,7 +45,7 @@ async function startServer() {
 
     const server = new ApolloServer({
       schema: schemaWithPermissions,
-      introspection: true, // Habilita la lectura del esquema
+      // introspection: true, // Habilita la lectura del esquema
       plugins: [
         // process.env.NODE_ENV === 'production'
         //   ? ApolloServerPluginLandingPageProductionDefault({ footer: false })
