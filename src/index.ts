@@ -47,9 +47,9 @@ async function startServer() {
       schema: schemaWithPermissions,
       introspection: true, // Habilita la lectura del esquema
       plugins: [
-        process.env.NODE_ENV === 'production'
-          ? ApolloServerPluginLandingPageProductionDefault({ footer: false })
-          : ApolloServerPluginLandingPageLocalDefault({ footer: false }),
+        // process.env.NODE_ENV === 'production'
+        //   ? ApolloServerPluginLandingPageProductionDefault({ footer: false })
+        //   : ApolloServerPluginLandingPageLocalDefault({ footer: false }),
           ApolloServerPluginDrainHttpServer({ httpServer })
       ],
       // plugins: [
