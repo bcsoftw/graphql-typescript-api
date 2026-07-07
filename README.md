@@ -28,9 +28,6 @@ The above commands will install the dependencies, build the project, and start s
 
 ## Author
 
-[Nic Raboy](https://nraboy.com)
+[Bcsoftw](https://bcsoftw.github.io/)
 
-## License
-
-ISC
 
