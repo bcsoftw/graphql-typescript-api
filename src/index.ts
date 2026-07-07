@@ -14,6 +14,8 @@ import { UserService } from './database/userService';
 import { makeExecutableSchema } from '@graphql-tools/schema';
 import { applyMiddleware } from 'graphql-middleware';
 import permissions from './guards/permissions';
+import { ApolloServerPluginLandingPageLocalDefault, ApolloServerPluginLandingPageProductionDefault } from '@apollo/server/plugin/landingPage/default';
+
 
 const app = express();
 dotenv.config();
@@ -43,9 +45,16 @@ async function startServer() {
 
     const server = new ApolloServer({
       schema: schemaWithPermissions,
+      introspection: true, // Habilita la lectura del esquema
       plugins: [
-        ApolloServerPluginDrainHttpServer({ httpServer })
+        process.env.NODE_ENV === 'production'
+          ? ApolloServerPluginLandingPageProductionDefault({ footer: false })
+          : ApolloServerPluginLandingPageLocalDefault({ footer: false }),
+           ApolloServerPluginDrainHttpServer({ httpServer })
       ],
+      // plugins: [
+      //   ApolloServerPluginDrainHttpServer({ httpServer })
+      // ],
       // plugins: [
       //   {
       //     async serverWillStart() {
