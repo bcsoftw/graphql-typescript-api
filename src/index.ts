@@ -50,7 +50,7 @@ async function startServer() {
         process.env.NODE_ENV === 'production'
           ? ApolloServerPluginLandingPageProductionDefault({ footer: false })
           : ApolloServerPluginLandingPageLocalDefault({ footer: false }),
-           ApolloServerPluginDrainHttpServer({ httpServer })
+          ApolloServerPluginDrainHttpServer({ httpServer })
       ],
       // plugins: [
       //   ApolloServerPluginDrainHttpServer({ httpServer })
