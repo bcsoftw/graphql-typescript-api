@@ -14,7 +14,7 @@ import { UserService } from './database/userService';
 import { makeExecutableSchema } from '@graphql-tools/schema';
 import { applyMiddleware } from 'graphql-middleware';
 import permissions from './guards/permissions';
-// import { ApolloServerPluginLandingPageLocalDefault, ApolloServerPluginLandingPageProductionDefault } from '@apollo/server/plugin/landingPage/default';
+import { ApolloServerPluginLandingPageLocalDefault} from '@apollo/server/plugin/landingPage/default';
 
 
 const app = express();
@@ -45,8 +45,10 @@ async function startServer() {
 
     const server = new ApolloServer({
       schema: schemaWithPermissions,
+      introspection: true,
       plugins: [
-        ApolloServerPluginDrainHttpServer({ httpServer })
+        ApolloServerPluginDrainHttpServer({ httpServer }),
+        ApolloServerPluginLandingPageLocalDefault({ footer: false }),
       ]
     });
 
