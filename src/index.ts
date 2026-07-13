@@ -171,7 +171,7 @@ app.get("/", (req: Request, res: Response) => {
         <p>Has accedido exitosamente al servidor. Nuestro servicio utiliza la arquitectura eficiente de GraphQL para proveerte exactamente los datos que necesitas de forma estructurada.</p>
         
         <!-- REEMPLAZA EL ATRIBUTO HREF CON TU ENDPOINT REAL -->
-        <a href="/graphql" class="btn-graphql">Explorar GraphQL Playground</a>
+        <a href="/graphql" target="_blank" class="btn-graphql">Explorar GraphQL Playground</a>
 
         <div class="footer">
             Desarrollado por <a href="https://bcsoftw.github.io/" target="_blank" style="color: #e10098; text-decoration: none;">bcsoftw</a> con la especificación oficial de <a href="https://graphql.org/" target="_blank" style="color: #e10098; text-decoration: none;">GraphQL</a>.
